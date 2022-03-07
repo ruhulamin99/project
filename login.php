@@ -1,54 +1,59 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login And registration</title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="ico/favicon.png" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="shortcut icon" href="img/icon.png" />
+    <title>Admin Login</title>
+    <style>
+        body,html {
+    background-image: url('https://i.imgur.com/xhiRfL6.jpg');
+    height: 100%;
+}
+
+#profile-img {
+    height:180px;
+}
+.h-80 {
+    height: 80% !important;
+}
+    </style>
+       <?php
+        include 'links.php'
+    ?>
 </head>
 <body>
-    <div class="container">
-        <div class="login-box">
-        <div class="row">
-           <div class="col-md-6 login-left">
-            <h2> Login Here </h2>
-            <form action="validation.php" method="post">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input class="form-control" type="text" name="user" required>
-                </div>
-            
-                <div class="form-group">
-                    <label>Password</label>
-                    <input class="form-control" type="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary"> Login </button>
-            </form>
-           </div> 
+   
+        <div class="container h-80">
+         
+        <div class="row align-items-center h-100">
+            <div class="col-3 mx-auto">
+                <div class="text-center">
+                    <img id="profile-img" class="rounded-circle profile-img-card" src="https://i.imgur.com/6b6psnA.png" />
+                    <p id="profile-name" class="profile-name-card"></p>
+                        <form action="logincheck.php" method="POST">
+                            <div class="form-group">
+                                <label style="color:#FFFFFF;">Username</label>
+                                <input type="text" name="username"value="" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:#FFFFFF;">Password</label>
+                                <input type="password" name="password"value="" class="form-control" autocomplete="off">
+                            </div>
+                            <input type="submit" value="Login" class="btn btn-success" name="submit">
+                        </form>
+                    
+                    </div>
 
-           <div class="col-md-6 login-right">
-            <h2> Register Here </h2>
-            <form action="registration.php" method="post">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input class="form-control" type="text" name="user" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input class="form-control" type="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input class="form-control" type="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary"> Register Here </button>
-            </form>
-           </div> 
-
+            </div>
+        
         </div>
-        </div>
-    </div>
+   
 </body>
 </html>
